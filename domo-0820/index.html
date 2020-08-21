@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/new_file.css" />
+	</head>
+
+	<body>
+		<div class="beijing">
+			<div class="gao"></div>
+			<p class="wenzi">第20078期<br>2020-08-20[星期四]</p>
+			<div class="zhibo">
+				<a href="https://www.cwl.gov.cn">直播回放</a>
+			</div>
+			<div class="gengdo">
+				<a href="https://h5.jiangduoduo.com">更多期次></a>
+			</div>
+			<button type="button" class="add">生成</button>
+			<ul class="c">
+				<!--<li>
+				<span>1</span>
+				<span>2</span>
+				<span>3</span>
+				<span>4</span>
+				<span>5</span>
+				<span>6</span>
+				<span>7</span>
+			</li>-->
+			</ul>
+			<div class="xiaoliang">
+				<p class="zhi">本期全国销量</p>
+				<p class="shu">339766446</p>
+			</div>
+			<div class="jiangchi">
+				<p class="jiang">积累奖池</p>
+				<p class="chi">1029746619</p>
+			</div>
+			<div class="dicheng">
+				<a href="https://h5.duoduoyoucai.com">一建计算中奖金额></a>
+			</div>
+			<div class="guanggao">
+				<a href="https//h5.duoduoyoucai.com">打开APP&nbsp;&nbsp;立马中奖</a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".add").click(function() {
+				var $li = $("<li></li>");
+				$(".c").html("")
+				for(var i = 0; i < 6; i++) {
+					var x = wang(37, 1);
+					var $span = $("<span></span>");
+					$span.text(x);
+					$li.append($span);
+				}
+				var xx = wang(16, 1);
+				var $span = $("<span></span>");
+				$span.text(xx);
+				$li.append($span);
+
+				$(".c").append($li);
+			})
+
+			function wang(w, m) {
+				var n = Math.random() * w + m;
+				n = Math.floor(n);
+				if(n < 10) {
+					n = "0" + n;
+
+				}
+				return n;
+			}
+		})
+	</script>
+
+</html>

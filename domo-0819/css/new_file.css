@@ -1,0 +1,121 @@
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+.zhangsan{
+	list-style: none;
+}
+.zhangsan>li{
+	width: 100%;
+	height: 30px;
+	/*background: darkgreen;*//**/
+	margin: 10px 0 0 0;
+}
+.zhangsan span{
+	float: left;
+	width: 80px;
+	height: 30px;
+	/*background: aqua;*/
+	line-height: 30px;
+    margin: 0 0 0 10px;
+}
+.zhangsan button{
+	float: left;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	background: #5bc0de;
+	margin: 0 0 0 10px;
+	border-radius: 4px;
+	border: 0px;
+}	
+.add{
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	background: #efad4f;
+	margin: 0  0 0 5px;
+	border-radius: 4px;
+	border: 0px;
+}
+.xingming{
+	width: 190px;
+	height: 30px;
+	padding:  0 0 0 5px;
+	border-radius: 8px;
+
+}
+.chengji{
+	width: 190px;
+	height: 30px;
+	padding: 0 0 0 5px;
+	border-radius: 8px;
+}
+.yanse{
+	border-color: red;
+}
+.beijing{
+	width: 100%;
+	height: 500px;
+	background: darkgray;
+	margin: 0 auto;
+}
+.kongxi{
+	height: 30px;
+}
+.xuhao{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	margin: 10px 0 0 0;
+	border-radius: 4px;
+	border: 0px;
+}
+.mengban{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	top: 0;
+	left: 0;
+}
+.xiaobeijing{
+	width: 410px;
+	height: 500px;
+	position: absolute;
+	background: transparent;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -250px;
+}
+.juzong{
+	width: 480px;
+	height: 500px;
+	background: transparent;
+	margin: 0 auto;
+}
+.xm{
+	width: 190px;
+	height: 30px;
+	border-radius: 8px;
+	
+}
+
+.cj{
+	width: 190px;
+	height: 30px;
+	border-radius: 8px;
+}
+.qd{
+	width: 50px;
+	height: 30px;
+	background: green;
+	margin: 100px 0 0 145px;
+}
+.qx{
+	width: 50px;
+	height: 30px;
+	background: red;
+}

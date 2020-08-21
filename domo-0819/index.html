@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/new_file.css" />
+	</head>
+
+	<body>
+		<div class="mengban">
+			<div class="xiaobeijing">
+				<input type="text" class="xm" placeholder="姓名" />
+				<input type="text" class="cj" placeholder="成绩" />
+				<button type="button" class="qd">确定</button>
+				<button type="button" class="qx">取消</button>
+			</div>
+		</div>
+		<div class="beijing">
+			<div class="kongxi"></div>
+			<div class="juzong">
+				<input type="text" class="xingming" placeholder="姓名" />
+				<input type="text" class="chengji" placeholder="成绩" />
+				<button type="button" class="add">戳我</button>
+				<ul class="zhangsan">
+					<li>
+						<span>序号</span>
+						<span>姓名</span>
+						<span>成绩</span>
+						<span>-</span>
+						<span>-</span>
+					</li>
+					<!--<li>姓名：<span>张三</span>;成绩：<span>66</span></li>-->
+				</ul>
+			</div>
+		</div>
+
+		<!--<button type="button" class="add">新增</button>-->
+		<!--	<ul class="zhangsan">
+			<!--<li>姓名：<span>张三</span>;成绩：<span>66</span></li>-->
+		<!--</ul>-->
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			var ii = 1;
+			var a = 0;
+			$(".xingming").focus();
+			$(".add").click(function() {
+				aa();
+			})
+			$(".xingming").keyup(function() {
+				var mm = $(".xingming").val();
+				if(mm == "") {
+					$(".xingming").addClass("yanse");
+					return;
+				} else {
+					$(".xingming").removeClass("yanse");
+				}
+				var c = event.which || event.keyCode;
+				console.log(c);
+				if(c == 13) {
+					$(".chengji").focus();
+				}
+			})
+			$(".chengji").keyup(function() {
+				var bb = $(".chengji").val();
+				if(bb == "") {
+					$(".chengji").addClass("yanse");
+					return;
+				} else {
+					$(".chengji").removeClass("yanse");
+				}
+				var c = event.which || event.keyCode;
+				if(c == 13) {
+					aa();
+				}
+			})
+
+			function aa() {
+				var mm = $(".xingming").val();
+				var bb = $(".chengji").val();
+				if(mm == "") {
+					$(".xingming").addClass("yanse");
+					return
+				} else {
+					$('.xingming').removeClass("yanse");
+				}
+				if(bb == "") {
+					$(".chengji").addClass("yanse");
+					return
+				} else {
+					$(".chengji").removeClass("yanse")
+				}
+
+				var $li = $('<li></li>');
+				var $pp = $("<span class='xuhao'></span>");
+				$pp.text(ii);
+				ii = ii + 1;
+				var $spanName = $("<span></span>");
+				$spanName.text(mm);
+				var $spanScore = $("<span></span>");
+				var $bthChange = $("<button type='button' class='change'>删除</button>")
+				var $bthXiugai = $("<button type='button' class='xiugai'>修改</button>")
+				$bthXiugai.click(function() {
+					$(".mengban").show();
+					a = $(this).parent().index();
+					var x = $(this).prev().prev().prev().text();
+					$(".xm").val(x);
+					$(".xm").focus();
+					var xx = $(this).prev().prev().text();
+					$(".cj").val(xx);
+
+				})
+				$bthChange.click(function() {
+					$(this).parent().remove();
+				})
+				$spanScore.text(bb);
+				$li.append($pp, $spanName, $spanScore, $bthChange, $bthXiugai);
+				$(".zhangsan").append($li);
+				$(".xingming,.chengji").val("");
+				$(".xingming").focus();
+			}
+			$(".qx").click(function() {
+				$(".mengban").hide();
+			})
+			$(".qd").click(function() {
+				$(".mengban").hide();
+				var u = $(".xm").val();
+				var n = $(".cj").val();
+				$(".zhangsan>li").eq(a).find("span").eq(1).text(u);
+				$(".zhangsan>li").eq(a).find("span").eq(2).text(n);
+			})
+			$(".xm").keyup(function() {
+				var jj = $(".xm").val();
+				if(jj == "") {
+					$(".xm").addClass("yanse");
+					return;
+				} else {
+					$(".xm").removeClass("yanse");
+				}
+				var v = event.which || event.keyCode;
+				console.log(v);
+				if(v == 13) {
+					$(".cj").focus();
+				}
+			})
+			$(".cj").keyup(function() {
+				var kk = $(".cj").val();
+				if(kk == "") {
+					$(".cj").addClass("yanse");
+					return;
+				} else {
+					$(".cj").removeClass("yanse");
+				}
+				var v = event.which || event.keyCode;
+				if(v == 13) {
+					ww();
+				}
+			})
+
+			function ww() {
+				var jj = $(".xm").val();
+				var kk = $(".chengji").val();
+				if(jj == "") {
+					$(".xm").addClass("yanse");
+					return
+				} else {
+					$('.xm').removeClass("yanse");
+				}
+				if(kk == "") {
+					$(".cj").addClass("yanse");
+					return
+				} else {
+					$(".cj").removeClass("yanse")
+				}
+			}
+		})
+	</script>
+
+</html>
