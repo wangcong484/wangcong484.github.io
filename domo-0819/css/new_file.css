@@ -7,28 +7,45 @@
 	list-style: none;
 }
 .zhangsan>li{
-	width: 100%;
-	height: 30px;
-	/*background: darkgreen;*//**/
-	margin: 10px 0 0 0;
+	width: 465px;
+	height: 40px;
+	background: #FFFFFF;
+	border: 3px solid #00FFFF;
+	line-height: 40px;
+    margin: 20px 0 0 0;
+    border-radius: 10px;
+}
+.zhangsan span:nth-child(1){
+	float: left;
+	width: 40px;
+	height: 40px;
+	background: #FFFFFF;
+	/*border: 3px solid #00FFFF;*/
+	border-radius: 50%;
+	text-align: center;
+	line-height: 40px;
+/*    margin: 10px 0 0 10px;*/
 }
 .zhangsan span{
 	float: left;
 	width: 80px;
-	height: 30px;
-	/*background: aqua;*/
-	line-height: 30px;
+	height: 40px;
+	background: #FFFFFF;
+	/*border: 3px solid #00FFFF;*/
+	text-align: center;
+	line-height: 40px;
     margin: 0 0 0 10px;
 }
 .zhangsan button{
 	float: left;
-	width: 90px;
-	height: 30px;
+	width: 40px;
+	height: 40px;
 	line-height: 30px;
-	background: #5bc0de;
-	margin: 0 0 0 10px;
-	border-radius: 4px;
+	background: #FFFFFF;
+	margin: 0 0 0 38px;
+	border-radius: 50%;
 	border: 0px;
+	cursor: pointer;
 }	
 .add{
 	width: 60px;
