@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/new_file.css" />
+	</head>
+
+	<body>
+
+		<div class="beijing">
+			<img src="img/1.png" class="tupianyi" />
+			<p class="wenzhi">点点看↓有惊喜</p>
+			<img src="img/4.png" class="tupianer" />
+			<img src="img/2.png" class="tupiansan" />
+			<img src="img/2.png" class="tupiansaner" />
+			<img src="img/3.png" class="tupiansi" />
+			<img src="img/5.png" class="tupianwu" />
+			<ul class="c">
+				<!--<li>
+				<span>1</span>
+			</li>-->
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			var i=1;
+			var wang = 100
+			$(".tupiansi").click(function() {
+				$(".tupiansi").hide();
+				$(".tupianwu").show();
+				var $li = $("<li></li>");
+				var $divwai = $('<div class="wai"</div>');
+				var an = Math.floor(Math.random()*101);
+				$divwai.text(an);
+				$li.append($divwai);
+				if(an < wang) {
+					$(".c>li>.tt").remove();
+					wang = an;
+					var $span = $("<span class='tt'>乖乖拿外卖</span>");
+					$li.append($span);
+				}
+				var $idd=$("<span class='idd'></span>");
+				$idd.text(i);
+				i++;
+				$li.append($idd);
+				$(".c").append($li);
+				/*$(".tupianliu").show();	*/
+				setTimeout(function() {
+					console.log(122)
+					$(".tupianwu").hide();
+					$(".tupiansi").show();
+				}, 1000)
+			})
+		})
+	</script>
+
+</html>
+<!--		/*	var $li = $("<li></li>");
+				for(var i = 0; i < 1; i++) {
+					var x = wang(37, 1);
+					var $span = $("<span></span>");
+					$span.text(x);
+					$li.append($span);
+				}
+
+				$(".c").append($li);
+			})
+
+			function wang(w, m) {
+				var n = Math.random() * w + m;
+				n = Math.floor(n);
+				if(n < 10) {
+					n = "0" + n;
+
+				}
+				return n;
+			}*/-->

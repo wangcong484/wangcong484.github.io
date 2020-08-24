@@ -1,0 +1,134 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.beijing{
+	width: 402px;
+	height: 100%;
+	background: #FFFFFF;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+.tupianyi{
+	width: 402px;
+	height: 220px;
+	vertical-align: top;
+}
+.wenzhi{
+	width: 120px;
+	height: 30px;
+	font-family: "微软雅黑",arial;
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 30px;
+	font-weight: 900;
+	top: 0;
+	left: 135px;
+	position: absolute;
+}
+.tupianer{
+	width: 100px;
+	height: 160px;
+	top: 60px;
+	left: -100px;
+	position: absolute;
+	animation: lugan 3s infinite linear;
+}
+@keyframes lugan{
+	from{
+		transform: translateX(500px) ;
+		
+	}
+	to{
+		transform: translateX(0px);
+		
+	}
+}
+.tupiansan{
+	width: 402px;
+	height: 30px;
+	top: 190px;
+	left: 0px;
+	position: absolute;
+	animation: gonglu 3s infinite linear;
+}
+@keyframes gonglu{
+	from{
+		 transform: translateX(0px);
+	}
+	to{
+		 transform: translateX(-402px);
+	}
+}
+.tupiansaner{
+	width: 402px;
+	height: 30px;
+	top: 190px;
+	left: 401px;
+	position: absolute;
+	animation: gongluer 3s  infinite linear;
+}
+@keyframes gongluer{
+	from{
+		 transform: translateX(0px);
+	}
+	to{
+		 transform: translateX(-402px);
+	}
+}
+.tupiansi{
+	width: 190px;
+	height: 130px;
+	top: 80px;
+	left: 90px;
+	position: absolute;
+	animation: zbc 1.5s linear 0s infinite alternate;
+}
+@keyframes zbc{
+	from{
+		transform: scale(1);
+	}
+	to{
+		transform: scale(1.1);
+	}
+}
+.tupianwu{
+	width: 190px;
+	height: 130px;
+	top: 80px;
+	left: 80px;
+	position: absolute;
+	display: none;
+	/*animation: zbc 1.5s linear 0s infinite alternate;*/
+}
+.wai{
+	list-style: none;
+	float: left;
+	width: 40px;
+	height: 40px;
+	background-image: url(../img/6.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px 40px;
+	transition: .3s;
+	text-align: center;
+	line-height: 40px;
+}
+.c>li{
+	width: 380px;
+	height: 40px;
+	background: #FFFFFF;
+	margin: 10px;
+}
+.tt{
+	float: left;
+	line-height: 40px;
+	margin-left: 20px;
+}
+.idd{
+	float: right;
+	color: #333;
+	line-height: 40px;
+}
