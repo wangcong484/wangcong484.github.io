@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/new_file.css" />
+	</head>
+
+	<body>
+		<div class="beijing">
+			<div class="toubu">
+				<p class="wenzhi">诚筑说&nbsp;&nbsp;手机号查询</p>
+				<p class="xiaowenzhi">为你提供最全面/精准的号码查询服务</p>
+			</div>
+			<div class="ddd">
+				<input type="text" class="get xxx" placeholder="请输入电话号码" />
+				<button type="button" class="anniu">查找</button>
+				<!--<input type="button" class="anniu" value="查找" />-->
+			</div>
+			<div class="sj">
+				<div class="logo">
+				<a href="">
+					<img src="img/kechengzixun.png" class="q" />
+				</a>
+				<a href="https://passport.weibo.com/">
+					<img src="img/jiaruweibo.png" class="qq" />
+				</a>
+				<a href="">
+					<img src="img/jiaruweixin.png" class="wx" />
+				</a>
+				<a href="https://www.chengzhushuo.com/course_bmlc.html">
+					<img src="img/shenlingzhuxuejin.png"class="qq"/>
+				</a>
+				<a href="https://www.chengzhushuo.com/about.html#xqdz_zs">
+					<img src="img/xiaoqudizhi.png" class="qq"/>
+				</a>
+				<a href="https://i.youku.com/chengzhushuo">
+					<img src="img/youkuzipindao.png" class="qq"/>
+				</a>
+				<a href="https://czs.ke.qq.com/">
+					<img src="img/yuyueshiting.png" class="qq" />
+				</a>
+				<a href="https://tieba.baidu.com/f?kw=%E8%AF%9A%E7%AD%91%E8%AF%B4">
+					<img src="img/baidutieba.png" class="qq" />
+				</a>
+			</div>
+				<img class="tx" src="img/r_default.png" />
+				<ul class="list"></ul>
+			</div>
+		</div>
+		<img src="img/IMG_20200910_102141.jpg" class="mengban"/>
+		<img src="img/微信图片_20200910102438.jpg" class="ewm"/>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".anniu").click(function() {
+				$(".list>li").remove();
+				$.ajax({
+					type: "get",
+					url: "https://api.jisuapi.com/shouji/query",
+					async: true,
+					data: {
+						"shouji": $(".get").val(),
+						"appkey": "6120ada5d743efa5"
+					},
+					dataType: "JSONP",
+					success: function(res) {
+						//调整背景start
+						$(".tx").show();
+						$(".sj").css("background-image", "url(img/phone_blue.png)")
+						//调整背景 end
+
+						console.log(res);
+						console.log(res.result);
+						var re = res.result;
+						for(var k in re) {
+							var $li = $("<li></li>");
+							var $pp = $("<p></p>");
+							var $ppp = $("<p></p>");
+
+							var kk;
+							switch(k) {
+								case "shouji":
+									kk = "手机号";
+									break;
+								case "province":
+									kk = "省";
+									break;
+								case "city":
+									kk = "市";
+									break;
+								case "company":
+									kk = "运营商";
+									break;
+								case "cardtype":
+									kk = "卡类型";
+									break;
+								case "areacode":
+									kk = "区号";
+									break;
+								default:
+									break;
+							}
+							$pp.text(kk + ':');
+							$ppp.text(re[k]);
+							$li.append($pp)
+							$li.append($ppp)
+
+							$(".list").append($li);
+						}
+					},
+					error: function(e) {
+						console.log(e);
+					}
+				});
+
+			})
+			$(".q").hover(function(){
+				$(".mengban").show();
+			},function(){
+				$(".mengban").hide();
+			})
+			$(".wx").hover(function(){
+				$(".ewm").show();
+			},function(){
+				$(".ewm").hide();
+			})
+		})
+	</script>
+
+</html>
