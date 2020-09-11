@@ -16,23 +16,55 @@
 	line-height: 50px;
 	text-align: center;
 }
+.shijiu{
+	float: left;
+	display: block;
+	width: 50%;
+	height: 300px;
+	margin: 50px 0 0 0;
+}
 .shijiu>img{
+	display: block;
 	width: 500px;
 	height: 300px;
-	margin: 50px 0 0 250px;
+	margin: 0 auto;
+}
+.ershi{
+	float: left;
+	display: block;
+	width: 50%;
+	height: 300px;
+	margin: 50px 0 0 0;
 }
 .ershi>img{
+	display: block;
 	width: 500px;
 	height: 300px;
-	margin: 50px 0 0 200px;
+	margin: 0 auto;
+}
+.eryi{
+	float: left;
+	display: block;
+	width: 50%;
+	height: 300px;
+	margin: 50px 0 0 0;
 }
 .eryi>img{
+	display: block;
 	width: 500px;
 	height: 300px;
-	margin: 50px 0 0 250px;
+	margin: 0 auto;
+}
+.shouji{
+	float: left;
+	display: block;
+	width: 50%;
+	height: 300px;
+	margin: 50px 0 0 0;
 }
 .shouji>img{
+	display: block;
 	width: 500px;
 	height: 300px;
-	margin: 50px 0 0 200px;
+	margin: 0 auto;
 }
