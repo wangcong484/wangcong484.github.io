@@ -21,7 +21,11 @@
 			<div class="juzong">
 				<input type="text" class="xingming" placeholder="姓名" />
 				<input type="text" class="chengji" placeholder="成绩" />
+				<br />
 				<button type="button" class="add">戳我</button>
+				<button type="button" class="sort">升序</button>
+			    <button type="button" class="pass">及格</button>
+			    <button type="button" class="reset">恢复</button>
 				<ul class="zhangsan">
 					<li>
 						<span>序号</span>
@@ -30,7 +34,8 @@
 						<span>-</span>
 						<span>-</span>
 					</li>
-					<!--<li>姓名：<span>张三</span>;成绩：<span>66</span></li>-->
+<!--					<li ><span>1</span><span>张三</span><span>89</span><button type="button" class="change">修改</button><button type="button" class="delete">删除</button></li><li><span>2</span><span>李四</span><span>58</span><button type="button" class="change">修改</button><button type="button" class="delete">删除</button></li><li ><span>3</span><span>王五</span><span>62</span><button type="button" class="change">修改</button><button type="button" class="delete">删除</button></li><li ><span>4</span><span>赵六</span><span>73</span><button type="button" class="change">修改</button><button type="button" class="delete">删除</button></li>
+-->					<!--<li>姓名：<span>张三</span>;成绩：<span>66</span></li>-->
 				</ul>
 			</div>
 		</div>
@@ -45,6 +50,8 @@
 		$(function() {
 			var ii = 1;
 			var a = 0;
+			var isPass = true;
+			var isSort = true;
 			$(".xingming").focus();
 			$(".add").click(function() {
 				aa();
@@ -173,6 +180,51 @@
 					return
 				} else {
 					$(".cj").removeClass("yanse")
+				}
+			}
+			$(".pass").click(function(){
+				$(".zhangsan>li").removeClass("passactive");
+				for (var i=1; i<$(".zhangsan>li").length; i++) {
+					var cursc = $(".zhangsan>li").eq(i).find("span").eq(2).text();
+					if (cursc >= 60 && isPass) {
+						$(".zhangsan>li").eq(i).addClass("passactive");
+					}
+					if (cursc < 60 && !isPass) {
+						$(".zhangsan>li").eq(i).addClass("passactive");
+					}
+				}
+				$(this).text(isPass?"不及格":"及格");
+				isPass = !isPass;
+			})
+			$(".reset").click(function(){
+				$(".zhangsan>li").removeClass("passactive");
+				isSort= false;
+				sorta(0);
+			})
+			function wang($w1,$m2){
+				var $a=$w1.clone(true);
+				var $b=$m2.clone(true);
+				$m2.after($a).remove();
+				$w1.after($b).remove();
+			}
+			$(".sort").click(function(){
+				sorta(2);
+				$(this).text(isPass?"降序":"升序");
+				isPass = !isPass;
+				isSort = !isSort;
+			})
+			function sorta(k){
+				for (var i=1; i<$(".zhangsan>li").length;i++){
+					var isc = $(".zhangsan>li").eq(i).find("span").eq(k).text();
+					for (var j=1; j<$(".zhangsan>li").length; j++) {
+						var jsc=$(".zhangsan>li").eq(j).find("span").eq(k).text();
+						if(Number(isc)>Number(jsc) && isSort){
+							wang($(".zhangsan>li").eq(i), $(".zhangsan>li").eq(j));
+						}
+						if(Number(isc)<Number(jsc)&& !isSort){
+							wang($(".zhangsan>li").eq(i), $(".zhangsan>li").eq(j));
+						}
+					}
 				}
 			}
 		})

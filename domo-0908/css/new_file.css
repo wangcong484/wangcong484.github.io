@@ -76,7 +76,7 @@ body{
 	padding: 280px 0 0 0;
 }
 .list>li{
-	width: 80%;
+	width: 50%;
 	height: 30px;
 	margin: 0 0 0 42%;
 }
@@ -117,7 +117,7 @@ body{
 	background: darkblue;
 	position: absolute;
 	bottom: 30%;
-	left: 42.5%;
+	left: 42.7%;
 }
 .ewm{
 	display: none;
